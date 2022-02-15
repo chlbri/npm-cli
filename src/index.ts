@@ -15,7 +15,7 @@ type Props = {
   lib?: string;
 };
 
-export default function publish({
+export default async function publish({
   currentBranch = 'dev',
   productionBranch = 'main',
   lib = 'lib',
@@ -30,7 +30,7 @@ export default function publish({
   // TODO: Add verif for git status
   if (isUpToDate()) {
     rinit();
-    exec(COMMANDS.INSTALL);
+    await exec(COMMANDS.INSTALL);
     exec2(COMMANDS.CHECKOUT_MAIN);
     exec2(COMMANDS.MERGE);
     pack(lib);
