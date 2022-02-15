@@ -1,7 +1,7 @@
 {
   "name": "@bemedev/npm-cli",
-  "version": "0.0.5",
-  "description": "https://github.com/chlbri/npm-cli.git",
+  "version": "0.0.1",
+  "description": "To publish NPM libraries",
   "author": "chlbri <bri_lvi@icloud.com>",
   "license": "MIT",
   "main": "lib/index.js",
@@ -28,10 +28,7 @@
     "ts-jest": "^27.1.3",
     "typescript": "^4.5.5"
   },
-  "scripts": {
-    "p-publish": "pnpm publish --access public --no-git-checks"
-  },
-  "repository": "https://github.com/chlbri/git-cli.git",
+  "repository": "https://github.com/chlbri/npm-cli.git",
   "dependencies": {
     "dotenv": "^16.0.0"
   }

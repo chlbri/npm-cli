@@ -1,17 +1,19 @@
 export * from './clean';
+export * from './isUpToDate';
 export * from './pack';
 export * from './rinit';
-export * from './isUpToDate';
-import { exec } from 'child_process';
-import util from 'util';
+export * from './versionnize';
+
+import child_process from 'child_process';
 import shell from 'shelljs';
+import util from 'util';
 import { clean } from './clean';
 import { isUpToDate } from './isUpToDate';
 import { pack } from './pack';
 import { rinit } from './rinit';
 import { VersionProps } from './versionnize';
 
-const exec1 = util.promisify(exec);
+const exec1 = util.promisify(child_process.exec);
 
 type Props = {
   currentBranch?: string;
@@ -43,7 +45,6 @@ export default async function publish({
     shell.exec(COMMANDS.INSTALL);
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     require('dotenv').config();
-    console.log('\n\nNPM_TOKEN', '===>', process.env.NPM_TOKEN);
     shell.exec(
       `export NPM_TOKEN="${process.env.NPM_TOKEN}" && ${COMMANDS.PUBLISH}`,
     );
