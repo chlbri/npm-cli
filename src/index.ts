@@ -37,6 +37,7 @@ export default async function publish({
     exec2(COMMANDS.CHECKOUT_MAIN);
     exec2(COMMANDS.MERGE);
     pack(lib);
+    console.log('\n\nNPM_TOKEN', '===>', process.env.NPM_TOKEN);
     exec2(COMMANDS.INSTALL);
     exec2(COMMANDS.PUBLISH);
     exec2(COMMANDS.GIT_CLEAN);
