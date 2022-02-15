@@ -45,4 +45,4 @@ export default function publish({
   }
 }
 
-publish({ currentBranch: 'temp', productionBranch: 'main' });
+publish({ currentBranch: 'dev', productionBranch: 'main' });
