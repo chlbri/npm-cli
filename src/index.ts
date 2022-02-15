@@ -3,11 +3,14 @@ export * from './pack';
 export * from './rinit';
 export * from './isUpToDate';
 import { exec } from 'child_process';
+import util from 'util';
 import { exec as exec2 } from 'shelljs';
 import { clean } from './clean';
 import { isUpToDate } from './isUpToDate';
 import { pack } from './pack';
 import { rinit } from './rinit';
+
+const exec1 = util.promisify(exec);
 
 type Props = {
   currentBranch?: string;
@@ -30,7 +33,7 @@ export default async function publish({
   // TODO: Add verif for git status
   if (isUpToDate()) {
     rinit();
-    await exec(COMMANDS.INSTALL);
+    await exec1(COMMANDS.INSTALL);
     exec2(COMMANDS.CHECKOUT_MAIN);
     exec2(COMMANDS.MERGE);
     pack(lib);
