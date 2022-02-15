@@ -24,7 +24,7 @@ export default function publish({
     CHECKOUT_MAIN: `git checkout ${productionBranch}`,
     MERGE: `git merge ${currentBranch}`,
     INSTALL: 'pnpm install --no-frozen-lockfile',
-    PUBLISH: 'pnpm run publish',
+    PUBLISH: 'pnpm run p-publish',
     GIT_CLEAN: 'git clean -fd && git checkout -- .',
   };
   // TODO: Add verif for git status
