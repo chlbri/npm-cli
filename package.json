@@ -1,6 +1,6 @@
 {
   "name": "@bemedev/npm-cli",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "To publish NPM libraries",
   "author": "chlbri <bri_lvi@icloud.com>",
   "license": "MIT",
