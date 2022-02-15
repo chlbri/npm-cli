@@ -27,7 +27,7 @@ export default async function publish({
     CHECKOUT_MAIN: `git checkout ${productionBranch}`,
     MERGE: `git merge ${currentBranch}`,
     INSTALL: 'pnpm install --no-frozen-lockfile',
-    PUBLISH: 'pnpm run p-publish',
+    PUBLISH: 'pnpm publish --access public --no-git-checks',
     GIT_CLEAN: 'git clean -fd && git checkout -- .',
   };
   // TODO: Add verif for git status
