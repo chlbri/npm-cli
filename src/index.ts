@@ -9,6 +9,7 @@ import { clean } from './clean';
 import { isUpToDate } from './isUpToDate';
 import { pack } from './pack';
 import { rinit } from './rinit';
+import { VersionProps } from './versionnize';
 
 const exec1 = util.promisify(exec);
 
@@ -16,12 +17,14 @@ type Props = {
   currentBranch?: string;
   productionBranch?: string;
   lib?: string;
+  versionProps?: VersionProps;
 };
 
 export default async function publish({
   currentBranch = 'dev',
   productionBranch = 'main',
   lib = 'lib',
+  versionProps = { type: 'patch', add: 1 },
 }: Props) {
   const COMMANDS = {
     CHECKOUT_MAIN: `git checkout ${productionBranch}`,
@@ -36,7 +39,7 @@ export default async function publish({
     await exec1(COMMANDS.INSTALL);
     shell.exec(COMMANDS.CHECKOUT_MAIN);
     shell.exec(COMMANDS.MERGE);
-    pack(lib);
+    pack({ lib, versionProps });
     shell.exec(COMMANDS.INSTALL);
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     require('dotenv').config();
