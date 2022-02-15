@@ -26,7 +26,7 @@
     "ts-jest": "^27.1.3",
     "typescript": "^4.5.5"
   },
-  "repository": "https://github.com/chlbri/npm-cli.git",
+  "repository": "https://github.com/chlbri/npm-publish.git",
   "dependencies": {
     "edit-json-file": "^1.7.0",
     "shelljs": "^0.8.5",
