@@ -54,5 +54,3 @@ export default async function publish({
     shell.exec(COMMANDS.INSTALL);
   }
 }
-
-publish({ currentBranch: 'dev', productionBranch: 'master' });
