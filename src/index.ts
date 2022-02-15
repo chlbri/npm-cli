@@ -4,7 +4,7 @@ export * from './rinit';
 export * from './isUpToDate';
 import { exec } from 'child_process';
 import util from 'util';
-import { exec as exec2 } from 'shelljs';
+import shell from 'shelljs';
 import { clean } from './clean';
 import { isUpToDate } from './isUpToDate';
 import { pack } from './pack';
@@ -34,16 +34,20 @@ export default async function publish({
   if (isUpToDate()) {
     rinit();
     await exec1(COMMANDS.INSTALL);
-    exec2(COMMANDS.CHECKOUT_MAIN);
-    exec2(COMMANDS.MERGE);
+    shell.exec(COMMANDS.CHECKOUT_MAIN);
+    shell.exec(COMMANDS.MERGE);
     pack(lib);
+    shell.exec(COMMANDS.INSTALL);
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    require('dotenv').config();
     console.log('\n\nNPM_TOKEN', '===>', process.env.NPM_TOKEN);
-    exec2(COMMANDS.INSTALL);
-    exec2(COMMANDS.PUBLISH);
-    exec2(COMMANDS.GIT_CLEAN);
-    exec2(COMMANDS.INSTALL);
+    shell.exec(
+      `export NPM_TOKEN="${process.env.NPM_TOKEN}" && ${COMMANDS.PUBLISH}`,
+    );
+    shell.exec(COMMANDS.GIT_CLEAN);
+    shell.exec(COMMANDS.INSTALL);
     clean(currentBranch, productionBranch);
-    exec2(COMMANDS.INSTALL);
+    shell.exec(COMMANDS.INSTALL);
   }
 }
 

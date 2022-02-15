@@ -31,5 +31,8 @@
   "scripts": {
     "p-publish": "pnpm publish --access public --no-git-checks"
   },
-  "repository": "https://github.com/chlbri/git-cli.git"
+  "repository": "https://github.com/chlbri/git-cli.git",
+  "dependencies": {
+    "dotenv": "^16.0.0"
+  }
 }
