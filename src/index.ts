@@ -30,18 +30,16 @@ export default function publish({
   // TODO: Add verif for git status
   if (isUpToDate()) {
     rinit();
-    exec(COMMANDS.INSTALL, err => {
-      if (err) return;
-      exec2(COMMANDS.CHECKOUT_MAIN);
-      exec2(COMMANDS.MERGE);
-      pack(lib);
-      exec2(COMMANDS.INSTALL);
-      exec2(COMMANDS.PUBLISH);
-      exec2(COMMANDS.GIT_CLEAN);
-      exec2(COMMANDS.INSTALL);
-      clean(currentBranch, productionBranch);
-      exec2(COMMANDS.INSTALL);
-    });
+    exec(COMMANDS.INSTALL);
+    exec2(COMMANDS.CHECKOUT_MAIN);
+    exec2(COMMANDS.MERGE);
+    pack(lib);
+    exec2(COMMANDS.INSTALL);
+    exec2(COMMANDS.PUBLISH);
+    exec2(COMMANDS.GIT_CLEAN);
+    exec2(COMMANDS.INSTALL);
+    clean(currentBranch, productionBranch);
+    exec2(COMMANDS.INSTALL);
   }
 }
 
