@@ -1,13 +1,11 @@
 import edit from 'edit-json-file';
 import { exec } from 'shelljs';
-import { PACKAGE } from './constants';
+import { PACKAGE, REMOVE_COMMAND } from './constants';
 import { versionnize, VersionProps } from './versionnize';
 
 // DO NOT DELETE THIS FILE
 // This file is used by build system to build a clean npm package with the compiled js files in the root of the package.
 // It will not be included in the npm package.
-
-const REMOVE_COMMAND = 'rm -rf dist src test lib';
 
 function resetToMain(data: any) {
   if (typeof data !== 'string') return '';
