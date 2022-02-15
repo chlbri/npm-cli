@@ -1,0 +1,35 @@
+{
+  "name": "@bemedev/npm-cli",
+  "version": "0.0.5",
+  "description": "https://github.com/chlbri/npm-cli.git",
+  "author": "chlbri <bri_lvi@icloud.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "devDependencies": {
+    "@types/edit-json-file": "^1.7.0",
+    "@types/faker": "^6.6.9",
+    "@types/jest": "^27.4.0",
+    "@types/shelljs": "^0.8.11",
+    "@typescript-eslint/eslint-plugin": "^5.11.0",
+    "@typescript-eslint/parser": "^5.11.0",
+    "dayjs": "^1.10.7",
+    "edit-json-file": "^1.7.0",
+    "eslint": "^8.9.0",
+    "faker": "^6.6.6",
+    "immer": "^9.0.12",
+    "jest": "^27.5.1",
+    "jest-cucumber": "^3.0.1",
+    "jest-extended": "^2.0.0",
+    "nanoid": "^3.2.0",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "shelljs": "^0.8.5",
+    "ts-jest": "^27.1.3",
+    "typescript": "^4.5.5"
+  },
+  "scripts": {
+    "publish": "pnpm publish --access public --no-git-checks"
+  },
+  "repository": "https://github.com/chlbri/git-cli.git"
+}
