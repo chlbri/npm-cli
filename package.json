@@ -1,5 +1,5 @@
 {
-  "name": "@bemedev/npm-cli",
+  "name": "@bemedev/npm-publish",
   "version": "0.0.1",
   "description": "To publish NPM libraries",
   "author": "chlbri <bri_lvi@icloud.com>",
