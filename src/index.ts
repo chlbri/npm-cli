@@ -51,4 +51,4 @@ export default async function publish({
   }
 }
 
-publish({ currentBranch: 'dev', productionBranch: 'main' });
+publish({ currentBranch: 'dev', productionBranch: 'master' });
