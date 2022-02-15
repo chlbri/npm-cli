@@ -151,3 +151,4 @@ yarn.lock
 .prettierrc.yml
 jest.config.js
 tsconfig.json
+pnpm-lock.yaml
